@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinFormsApp.StackPage" Padding="0, 20, 0, 0">
+    <StackLayout BackgroundColor="Yellow"
+                 Orientation="Horizontal"
+                 Spacing="20"
+                 Padding="30"
+                 VerticalOptions="Center"
+                 HorizontalOptions="Center">
+        <StackLayout>
+            <Image Source="https://static.toiimg.com/thumb/72975551.cms?width=200" />
+            <Label Text="Label 1"/>
+        </StackLayout>
+        <StackLayout>
+            <Image  Source="https://static.toiimg.com/thumb/72974540.cms?width=200"/>
+            <Label Text="Label 2"/>
+        </StackLayout>
+        <StackLayout>
+            <Image  Source="https://static.toiimg.com/thumb/72977551.cms?width=200"/>
+            <Label Text="Label 3"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
