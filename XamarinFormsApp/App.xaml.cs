@@ -10,7 +10,7 @@ namespace XamarinFormsApp
         {
             InitializeComponent();
 
-            MainPage = new AbsolutePage();
+            MainPage = new PayCreditPage();
         }
 
         protected override void OnStart()
