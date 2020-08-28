@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace XamarinFormsApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PhoneKeyPad : ContentPage
+    public partial class KeypadPage : ContentPage
     {
-        public PhoneKeyPad()
+        public KeypadPage()
         {
             InitializeComponent();
         }

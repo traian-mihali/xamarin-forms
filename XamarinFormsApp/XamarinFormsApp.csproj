@@ -16,6 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="KeypadPage.xaml.cs">
+      <DependentUpon>KeypadPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="StackPage.xaml.cs">
       <DependentUpon>StackPage.xaml</DependentUpon>
     </Compile>
@@ -31,7 +34,7 @@
     <EmbeddedResource Update="LoginPage1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PhoneKeyPad.xaml">
+    <EmbeddedResource Update="KeypadPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="PhotoPage.xaml">
