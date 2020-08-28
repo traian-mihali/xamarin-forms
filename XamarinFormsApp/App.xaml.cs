@@ -10,7 +10,7 @@ namespace XamarinFormsApp
         {
             InitializeComponent();
 
-            MainPage = new LoginPage1();
+            MainPage = new PhoneKeyPad();
         }
 
         protected override void OnStart()
