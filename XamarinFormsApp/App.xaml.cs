@@ -10,7 +10,7 @@ namespace XamarinFormsApp
         {
             InitializeComponent();
 
-            MainPage = new GridPage();
+            MainPage = new LoginPage1();
         }
 
         protected override void OnStart()
