@@ -11,7 +11,7 @@ namespace XamarinFormsApp
         {
             InitializeComponent();
 
-            MainPage = new ImagePage();
+            MainPage = new ImageCirclePage();
         }
 
         protected override void OnStart()
