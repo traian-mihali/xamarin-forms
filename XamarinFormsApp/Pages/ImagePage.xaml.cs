@@ -16,7 +16,7 @@ namespace XamarinFormsApp.Pages
         {
             InitializeComponent();
 
-            SetBackgroundImage();
+            //SetBackgroundImage();
         }
 
         private void SetBackgroundImage()
@@ -29,7 +29,9 @@ namespace XamarinFormsApp.Pages
             imageSrc.CachingEnabled = false;
 
             //image.Aspect = Aspect.AspectFill;
-            image.Source = imageSrc;
+            //image.Source = imageSrc;
+
+            //image.Source = UriImageSource.FromResource("XamarinFormsApp.Images.background.jpg");
 
         }
     }

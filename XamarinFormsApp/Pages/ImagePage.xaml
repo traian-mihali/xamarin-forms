@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinFormsApp.MarkupExtensions"
              x:Class="XamarinFormsApp.Pages.ImagePage"
              BackgroundColor="Black">
- 
     <AbsoluteLayout>
-        <ActivityIndicator Color="White" IsRunning="{Binding Source={x:Reference image}, Path=IsLoading }" AbsoluteLayout.LayoutBounds="0.5, 0.5, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional" />
-        <Image x:Name="image" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" />
+        <!-- <ActivityIndicator Color="White" IsRunning="{Binding Source={x:Reference image}, Path=IsLoading }" AbsoluteLayout.LayoutBounds="0.5, 0.5, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional" />
+        <Image x:Name="image" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" /> -->
+        <Image Source="{local:EmbeddedImage XamarinFormsApp.Images.background.jpg }" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" /> 
     </AbsoluteLayout>
- 
 </ContentPage>
