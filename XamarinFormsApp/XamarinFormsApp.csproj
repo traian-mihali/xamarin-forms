@@ -16,49 +16,49 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="KeypadPage.xaml.cs">
+    <Compile Update="Pages\KeypadPage.xaml.cs">
       <DependentUpon>KeypadPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="StackPage.xaml.cs">
+    <Compile Update="Pages\StackPage.xaml.cs">
       <DependentUpon>StackPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="AbsolutePage.xaml">
+    <EmbeddedResource Update="Pages\AbsolutePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="GridPage.xaml">
+    <EmbeddedResource Update="Pages\GridPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="LoginPage.xaml">
+    <EmbeddedResource Update="Pages\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="LoginPage1.xaml">
+    <EmbeddedResource Update="Pages\LoginPage1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="KeypadPage.xaml">
+    <EmbeddedResource Update="Pages\KeypadPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PayCreditPage.xaml">
+    <EmbeddedResource Update="Pages\PayCreditPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PayCreditPage1.xaml">
+    <EmbeddedResource Update="Pages\PayCreditPage1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PhotoPage.xaml">
+    <EmbeddedResource Update="Pages\PhotoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="RelativePage.xaml">
+    <EmbeddedResource Update="Pages\RelativePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="StackPage.xaml">
+    <EmbeddedResource Update="Pages\StackPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="QuotesPage.xaml">
+    <EmbeddedResource Update="Pages\QuotesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ZenPage.xaml">
+    <EmbeddedResource Update="Pages\ZenPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
