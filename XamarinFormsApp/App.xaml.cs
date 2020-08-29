@@ -10,7 +10,7 @@ namespace XamarinFormsApp
         {
             InitializeComponent();
 
-            MainPage = new ZenPage();
+            MainPage = new RelativePage();
         }
 
         protected override void OnStart()

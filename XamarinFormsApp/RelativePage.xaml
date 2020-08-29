@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinFormsApp.RelativePage">
+    <RelativeLayout>
+        <BoxView Color="Aquamarine" x:Name="banner"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1 }"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3 }" />
+
+        <BoxView Color="Moccasin"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=banner, Property=Height, Factor=1, Constant=-50 }" 
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3 }"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0.4}"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=banner, Property=Height, Factor=0.5 }"/>
+    </RelativeLayout>
+</ContentPage>
