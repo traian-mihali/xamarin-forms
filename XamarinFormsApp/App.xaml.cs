@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinFormsApp.Pages;
 
 namespace XamarinFormsApp
 {
@@ -10,7 +11,7 @@ namespace XamarinFormsApp
         {
             InitializeComponent();
 
-            MainPage = new PayCreditPage1();
+            MainPage = new ImagePage();
         }
 
         protected override void OnStart()
