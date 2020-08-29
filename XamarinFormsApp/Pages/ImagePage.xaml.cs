@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 
 namespace XamarinFormsApp.Pages
@@ -17,6 +18,8 @@ namespace XamarinFormsApp.Pages
             InitializeComponent();
 
             //SetBackgroundImage();
+
+            //btn.ImageSource = ImageSource.FromFile("clock.png");
         }
 
         private void SetBackgroundImage()
