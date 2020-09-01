@@ -35,7 +35,7 @@ namespace XamarinFormsApp.Pages
             //};
         }
 
-        private void LoadContacts()
+        private void LoadContacts(string searchText = null)
         {
             _contacts = new ObservableCollection<Contact>
             {
@@ -43,7 +43,14 @@ namespace XamarinFormsApp.Pages
                 new Contact { Name = "Doe", ImageUrl = "http://lorempixel.com/100/100/people/2/", Status="Hey, what's up?" }
             };
 
+            if (!String.IsNullOrWhiteSpace(searchText))
+            {
+                var contacts = _contacts.Where(c => c.Name.ToLower().StartsWith(searchText.ToLower())).ToList();
+                _contacts = new ObservableCollection<Contact>(contacts);
+            }
+
             listView.ItemsSource = _contacts;
+
         }
 
         private void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -78,6 +85,11 @@ namespace XamarinFormsApp.Pages
 
             //listView.IsRefreshing = false;
             listView.EndRefresh();
+        }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            LoadContacts(e.NewTextValue);
         }
     }
 }
