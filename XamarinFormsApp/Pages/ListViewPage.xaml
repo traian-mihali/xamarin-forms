@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinFormsApp.Pages.ListViewPage">
+    <ListView x:Name="listView" 
+              SeparatorColor="AliceBlue" 
+              HasUnevenRows="True" 
+              IsPullToRefreshEnabled="True"
+              Refreshing="Handle_Refreshing"
+              ItemTapped="Handle_ItemTapped"
+              ItemSelected="Handle_ItemSelected">
+        <!-- IsGroupingEnabled="True" -->
+        <!-- GroupDisplayBinding="{Binding Title}" -->
+        <!-- GroupShortNameBinding="{Binding ShortTitle}" -->
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ImageCell ImageSource="{Binding ImageUrl}" Text="{Binding Name}" Detail="{Binding Status}" TextColor="DarkBlue" DetailColor="BlueViolet" >
+                    <ImageCell.ContextActions>
+                        <MenuItem Text="Call" Clicked="Call_Clicked" CommandParameter="{Binding .}"/>
+                        <MenuItem Text="Delete" Clicked="Delete_Clicked" IsDestructive="True" CommandParameter="{Binding .}"/>
+                    </ImageCell.ContextActions>
+                </ImageCell>
+                <!-- <ViewCell>
+                    <StackLayout Orientation="Horizontal" BackgroundColor="White" Padding="5">
+                        <Image Source="{Binding ImageUrl}"/>
+                        <StackLayout HorizontalOptions="StartAndExpand">
+                            <Label Text="{Binding Name}" TextColor="Black"/>
+                            <Label Text="{Binding Status}" TextColor="Gray"/>
+                        </StackLayout>
+                        <Button Text="Follow" BackgroundColor="White"/>
+                        
+                    </StackLayout>
+                </ViewCell> -->
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

@@ -11,7 +11,7 @@ namespace XamarinFormsApp
         {
             InitializeComponent();
 
-            MainPage = new PhotoGalleryPage();
+            MainPage = new ListViewPage();
         }
 
         protected override void OnStart()
