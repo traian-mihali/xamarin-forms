@@ -11,7 +11,7 @@ namespace XamarinFormsApp
         {
             InitializeComponent();
 
-            MainPage = new ListViewPage();
+            MainPage = new RecentSearchesPage();
         }
 
         protected override void OnStart()
