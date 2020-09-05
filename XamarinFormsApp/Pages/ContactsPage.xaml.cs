@@ -59,7 +59,7 @@ namespace XamarinFormsApp.Pages
             //DisplayAlert("Item Tapped", contact.Name, "OK");
         }
 
-        private async void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             //if (e.SelectedItem == null)
             //    return;
