@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinFormsApp.LoginPage"
              Background="#127ac7"
+             NavigationPage.HasNavigationBar="False"
              Padding="0, 20, 0, 0">
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" Android="0" WinPhone="20, 40, 20, 20">
@@ -24,7 +25,8 @@
         <Label />
         <Button Text="Login" 
                 TextColor="AntiqueWhite" 
-                Background="#1dabf0" />
+                Background="#1dabf0"
+                Clicked="LoginBtn_Clicked"/>
         <Button Text="Register" 
                 TextColor="AntiqueWhite" 
                 Background="#1dabf0" />

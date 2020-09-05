@@ -16,5 +16,11 @@ namespace XamarinFormsApp
         {
             InitializeComponent();
         }
+
+        async private void LoginBtn_Clicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new ZenPage());
+            await Navigation.PushModalAsync(new ZenPage());
+        }
     }
 }

@@ -1,16 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinFormsApp.ZenPage">
+             x:Class="XamarinFormsApp.ZenPage"
+             NavigationPage.HasNavigationBar="False"
+             Title="Zen Page">
 
     <AbsoluteLayout>
         <Image AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Source="http://lorempixel.com/1920/1080/nature/7" Aspect="AspectFill" />
         <Label HorizontalOptions="Center" AbsoluteLayout.LayoutBounds="0, 20, 1, 50" AbsoluteLayout.LayoutFlags="WidthProportional" Text="Relax" FontSize="30" TextColor="White" />
         <BoxView Color="Black" AbsoluteLayout.LayoutBounds="0, 1, 1, 100" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" Opacity="0.5" />
         <StackLayout AbsoluteLayout.LayoutBounds="0, 1, 1, 100" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" Padding="30, 0" Orientation="Horizontal">
+            <!-- 
             <Label Text="Profile" TextColor="White" FontSize="17" HorizontalOptions="Center" VerticalOptions="Center" />
             <Label Text="Meditate" TextColor="White" FontSize="17" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
             <Label Text="Themes" TextColor="White" FontSize="17" HorizontalOptions="Center" VerticalOptions="Center" />
+            -->
+            <Button Text="Profile" TextColor="White" BackgroundColor="BlueViolet" FontSize="17" HorizontalOptions="Center" VerticalOptions="Center" Clicked="ProfileBtn_Clicked" />
+            <Button Text="Quotes" TextColor="White" BackgroundColor="BlueViolet" FontSize="17" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Clicked="QuotesBtn_Clicked" />
+            <Button Text="Gallery" TextColor="White" BackgroundColor="BlueViolet" FontSize="17" HorizontalOptions="Center" VerticalOptions="Center" Clicked="GalleryBtn_Clicked"/>
         </StackLayout>
     </AbsoluteLayout>
 </ContentPage>
