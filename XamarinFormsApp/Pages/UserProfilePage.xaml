@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="XamarinFormsApp.Pages.UserProfilePage"
+             Title="{Binding Name}">
+    <StackLayout Padding="20">
+        <ic:CircleImage Source="{Binding ImageUrl}" WidthRequest="150" HeightRequest="150" HorizontalOptions="Center" Aspect="AspectFill"/>
+        <Label Text="{Binding Name}" FontSize="22" FontAttributes="Bold" />
+        <Label Text="{Binding Description}" FontSize="18" TextColor="Gray"/>
+    </StackLayout>
+</ContentPage>
