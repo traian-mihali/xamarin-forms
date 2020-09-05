@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinFormsApp.Pages.ToolbarPage"
+             Title="Toolbar Example">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="clock.png" Text="New" Activated="PrimaryToolbar_Activated" Order="Primary"/>
+        <ToolbarItem IconImageSource="clock.png" Text="New" Activated="SecondaryToolbar_Activated" Order="Secondary"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>

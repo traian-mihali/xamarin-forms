@@ -17,5 +17,7 @@ namespace XamarinFormsApp
 
             //this.Children.Add(new ContactsPage());
         }
+
+
     }
 }
