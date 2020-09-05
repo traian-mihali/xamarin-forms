@@ -8,7 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamarinFormsApp.Pages;
 
-namespace XamarinFormsApp
+namespace XamarinFormsApp.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ZenPage : ContentPage

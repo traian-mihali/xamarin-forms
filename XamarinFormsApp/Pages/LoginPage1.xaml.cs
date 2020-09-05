@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace XamarinFormsApp
+namespace XamarinFormsApp.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage1 : ContentPage

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinFormsApp.PayCreditPage">
+             x:Class="XamarinFormsApp.Pages.PayCreditPage">
     <AbsoluteLayout BackgroundColor="White">
         <BoxView AbsoluteLayout.LayoutBounds="0, 0, 1, 0.3" AbsoluteLayout.LayoutFlags="All" BackgroundColor="#f7f7f7" />
 
