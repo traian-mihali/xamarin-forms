@@ -16,5 +16,27 @@ namespace XamarinFormsApp.Pages
         {
             InitializeComponent();
         }
+
+        private async void ShareBtn_Clicked(object sender, EventArgs e)
+        {
+            var response = await DisplayAlert("Share", "You are going to share this to Facebook. Please confirm.", "Confirm", "Cancel");
+
+            if (response)
+                await DisplayAlert("Done", null, "Ok");
+        }
+
+        private async void CommentBtn_Clicked(object sender, EventArgs e)
+        {
+            var response = await DisplayActionSheet("Comment", "Cancel", "Delete", "Add comment", "Edit comment");
+
+            await DisplayAlert("Response", response, "OK");
+        }
+
+        private async void LikeBtn_Clicked(object sender, EventArgs e)
+        {
+            var response = await DisplayActionSheet(null, "Cancel", null, "Like", "Dislike");
+
+            await DisplayAlert("Response", response, "OK");
+        }
     }
 }
