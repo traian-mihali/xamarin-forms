@@ -79,6 +79,12 @@
     <AndroidResource Include="Resources\drawable-xhdpi\right" />
     <AndroidResource Include="Resources\drawable-xxhdpi\right" />
     <AndroidResource Include="Resources\drawable-xxhdpi\left" />
+    <AndroidResource Include="Resources\drawable\heart" />
+    <AndroidResource Include="Resources\drawable-hdpi\user" />
+    <AndroidResource Include="Resources\drawable-hdpi\heart" />
+    <AndroidResource Include="Resources\drawable-xhdpi\user" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\user" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\heart" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.xml" />
@@ -98,7 +104,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\user.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamarinFormsApp\XamarinFormsApp.csproj">
       <Project>{AA3CE503-33C5-46A9-BA26-2E5B94F7A2C5}</Project>
@@ -116,6 +124,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\heart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
