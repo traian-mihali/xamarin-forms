@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:local="clr-namespace:XamarinFormsApp.Pages"
             x:Class="XamarinFormsApp.MainPage">
 
-    <local:ContactsPage Title="Contacts" />
     <local:PayCreditPage Title="Credit" />
     <local:PhotoPage Title="Photo" />
     <local:KeypadPage Title="Keypad" />
     <local:ZenPage Title="Zen" />
     <local:LoginPage Title="Login" />
     
-</TabbedPage>
+</CarouselPage>

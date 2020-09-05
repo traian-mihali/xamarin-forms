@@ -9,13 +9,13 @@ using XamarinFormsApp.Pages;
 
 namespace XamarinFormsApp
 {
-    public partial class MainPage : TabbedPage
+    public partial class MainPage : CarouselPage
     {
         public MainPage()
         {
             InitializeComponent();
 
-            this.Children.Add(new ContactsPage());
+            //this.Children.Add(new ContactsPage());
         }
     }
 }
