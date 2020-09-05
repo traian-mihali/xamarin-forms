@@ -12,11 +12,11 @@ using XamarinFormsApp.Models;
 namespace XamarinFormsApp.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ListViewPage : ContentPage
+    public partial class ContactsPage : MasterDetailPage
     {
         private ObservableCollection<Contact> _contacts;
 
-        public ListViewPage()
+        public ContactsPage()
         {
             InitializeComponent();
 
@@ -55,16 +55,25 @@ namespace XamarinFormsApp.Pages
 
         private void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var contact = e.Item as Contact;
-            DisplayAlert("Item Tapped", contact.Name, "OK");
+            //var contact = e.Item as Contact;
+            //DisplayAlert("Item Tapped", contact.Name, "OK");
         }
 
-        private void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            //var contact = e.SelectedItem as Contact;
+            //if (e.SelectedItem == null)
+            //    return;
+
+            var contact = e.SelectedItem as Contact;
+            Detail = new NavigationPage(new ContactDetailPage(contact));
+
+            IsPresented = false;
+
+            //await Navigation.PushAsync(new ContactDetailPage(contact));
+
             //DisplayAlert("Item Selected", contact.Name, "OK");
 
-            listView.SelectedItem = null;
+            //listView.SelectedItem = null;
         }
 
         private void Call_Clicked(object sender, EventArgs e)
@@ -90,6 +99,12 @@ namespace XamarinFormsApp.Pages
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             LoadContacts(e.NewTextValue);
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            //return base.OnBackButtonPressed();
+            return true;
         }
     }
 }

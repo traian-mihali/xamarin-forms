@@ -11,7 +11,8 @@ namespace XamarinFormsApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage());
+            //MainPage = new NavigationPage(new ContactsPage());
+            MainPage = new ContactsPage();
         }
 
         protected override void OnStart()
