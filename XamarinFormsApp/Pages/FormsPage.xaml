@@ -4,7 +4,12 @@
              Padding="40"
              x:Class="XamarinFormsApp.Pages.FormsPage">
     <StackLayout>
-        <Switch IsToggled="True" x:Name="switcher" Toggled="OnSwitcherToggled" HorizontalOptions="StartAndExpand"/>
-        <Label Text="Content" x:Name="label" IsVisible="{Binding Source={x:Reference switcher}, Path=IsToggled}"/>
+        <Switch x:Name="switcher" Toggled="OnSwitcherToggled" HorizontalOptions="StartAndExpand"/>
+        <Label Text="Show Slider" x:Name="label"/>
+
+        <StackLayout Margin="0, 20, 0, 0" IsVisible="{Binding Source={x:Reference switcher}, Path=IsToggled}">
+            <Slider x:Name="slider" Maximum="100" Minimum="1" ValueChanged="OnSliderValueChanged"/>
+            <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:N0}' }"/>
+        </StackLayout>
     </StackLayout>
 </ContentPage>

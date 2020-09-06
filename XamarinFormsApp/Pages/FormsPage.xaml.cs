@@ -19,7 +19,12 @@ namespace XamarinFormsApp.Pages
 
         private void OnSwitcherToggled(object sender, ToggledEventArgs e)
         {
-            //label.IsVisible = e.Value;
+            label.Text = e.Value ? "Hide Slider" : "Show Slider";
+        }
+
+        private void OnSliderValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            //e.OldValue
         }
     }
 }
