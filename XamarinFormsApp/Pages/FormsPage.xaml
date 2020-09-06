@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Padding="40"
+             x:Class="XamarinFormsApp.Pages.FormsPage">
+    <StackLayout>
+        <Switch IsToggled="True" x:Name="switcher" Toggled="OnSwitcherToggled" HorizontalOptions="StartAndExpand"/>
+        <Label Text="Content" x:Name="label" IsVisible="{Binding Source={x:Reference switcher}, Path=IsToggled}"/>
+    </StackLayout>
+</ContentPage>
