@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              Padding="40"
              x:Class="XamarinFormsApp.Pages.FormsPage">
     <StackLayout>
@@ -36,6 +37,11 @@
                 </Picker.Items>
                 -->
             </Picker>
+        </StackLayout>
+
+        <StackLayout>
+            <DatePicker Date="{x:Static sys:DateTime.Today}" Format="d MMM yyyy" DateSelected="OnDateSelected"/>
+            <TimePicker Time="20:00" />
         </StackLayout>
     </StackLayout>
 </ContentPage>

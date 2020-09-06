@@ -61,5 +61,10 @@ namespace XamarinFormsApp.Pages
             foreach (var contactMethod in _contactMethods)
                 contactMethods.Items.Add(contactMethod.Name);
         }
+
+        private void OnDateSelected(object sender, DateChangedEventArgs e)
+        {
+            DisplayAlert("Selected Date", e.NewDate.ToString("d MMM yyyy"), "OK");
+        }
     }
 }
