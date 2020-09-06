@@ -9,8 +9,9 @@ namespace XamarinFormsApp.Services
     {
         private IEnumerable<ContactMethod> _contactMethods = new List<ContactMethod>
         {
-            new ContactMethod { Id = 1, Name = "Email" },
-            new ContactMethod { Id = 2, Name = "SMS" }
+            new ContactMethod { Id = 1, Name = "None" },
+            new ContactMethod { Id = 2, Name = "Email" },
+            new ContactMethod { Id = 3, Name = "SMS" }
         };
 
         public IEnumerable<ContactMethod> GetContactMethods()

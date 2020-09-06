@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:XamarinFormsApp.Extensions"
-             x:Class="XamarinFormsApp.Pages.TableViewPage">
+             x:Class="XamarinFormsApp.Pages.TableViewPage"
+             NavigationPage.HasNavigationBar="False">
     <TableView Intent="Form">
         <TableRoot>
             <TableSection Title="Basics">
@@ -11,6 +12,12 @@
                 <SwitchCell Text="Notifications" On="True" />
                 <local:DateCell Label="Starts" Date="1 Jan 2020" />
                 <local:DateCell Label="Ends" Date="1 Dec 2020" />
+                <ViewCell Tapped="OnContactMethodTapped" >
+                    <StackLayout Orientation="Horizontal" Padding="13, 5">
+                        <Label Text="Contact Method" VerticalOptions="Center"/>
+                        <Label x:Name="contactMethod" Text="None" VerticalOptions="Center" TextColor="Gray" HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                </ViewCell>
             </TableSection>
         </TableRoot>
     </TableView>

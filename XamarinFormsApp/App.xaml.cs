@@ -15,7 +15,7 @@ namespace XamarinFormsApp
             //MainPage = new NavigationPage(new ToolbarPage());
             //MainPage = new NavigationPage(new InstagramPage());
             //MainPage = new FormsPage()
-            MainPage = new TableViewPage();
+            MainPage = new NavigationPage(new TableViewPage());
 
         }
 
