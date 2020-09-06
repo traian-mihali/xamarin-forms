@@ -24,7 +24,10 @@ namespace XamarinFormsApp.Pages
 
         private void OnSliderValueChanged(object sender, ValueChangedEventArgs e)
         {
-            //e.OldValue
+            if (e.NewValue == 100)
+                DisplayAlert("Slider", "Value reached max limit", "OK");
+            else if (e.NewValue == 1)
+                DisplayAlert("Slider", "Value reached min limit", "OK");
         }
     }
 }

@@ -11,5 +11,10 @@
             <Slider x:Name="slider" Maximum="100" Minimum="1" ValueChanged="OnSliderValueChanged"/>
             <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:N0}' }"/>
         </StackLayout>
+
+        <StackLayout>
+            <Stepper x:Name="stepper" Maximum="100" Increment="10" />
+            <Label Text="{Binding Source={x:Reference stepper}, Path=Value }"/>
+        </StackLayout>
     </StackLayout>
 </ContentPage>
