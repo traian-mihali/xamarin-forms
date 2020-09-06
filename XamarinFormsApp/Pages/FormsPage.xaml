@@ -26,5 +26,16 @@
         <StackLayout BackgroundColor="BlanchedAlmond" VerticalOptions="FillAndExpand" Margin="0, 20, 0, 0">
             <Editor BackgroundColor="CadetBlue" VerticalOptions="FillAndExpand" />
         </StackLayout>
+
+        <StackLayout>
+            <Picker x:Name="contactMethods" Title="Contact Method" SelectedIndexChanged="OnSelectedIndexChanged">
+                <!--
+                <Picker.Items>
+                    <x:String>Email</x:String>
+                    <x:String>SMS</x:String>
+                </Picker.Items>
+                -->
+            </Picker>
+        </StackLayout>
     </StackLayout>
 </ContentPage>
