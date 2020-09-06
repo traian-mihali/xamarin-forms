@@ -29,5 +29,15 @@ namespace XamarinFormsApp.Pages
             else if (e.NewValue == 1)
                 DisplayAlert("Slider", "Value reached min limit", "OK");
         }
+
+        private void OnPhoneTextChanged(object sender, TextChangedEventArgs e)
+        {
+            phoneLabel.Text = e.NewTextValue;
+        }
+
+        private void OnPasswordCompleted(object sender, EventArgs e)
+        {
+            DisplayAlert("Password", "Your password is too weak. Please use at least 8 characters, including 1 uppercase and 1 special character.", "OK");
+        }
     }
 }
