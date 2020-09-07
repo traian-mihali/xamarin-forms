@@ -39,13 +39,13 @@ namespace XamarinFormsApp.Pages
         {
             _contacts = new ObservableCollection<Contact>
             {
-                new Contact { Name = "John", ImageUrl = "http://lorempixel.com/100/100/people/1/" },
-                new Contact { Name = "Doe", ImageUrl = "http://lorempixel.com/100/100/people/2/", Status="Hey, what's up?" }
+                new Contact { FirstName = "John", ImageUrl = "http://lorempixel.com/100/100/people/1/" },
+                new Contact { FirstName = "Doe", ImageUrl = "http://lorempixel.com/100/100/people/2/", Status="Hey, what's up?" }
             };
 
             if (!String.IsNullOrWhiteSpace(searchText))
             {
-                var contacts = _contacts.Where(c => c.Name.ToLower().StartsWith(searchText.ToLower())).ToList();
+                var contacts = _contacts.Where(c => c.FirstName.ToLower().StartsWith(searchText.ToLower())).ToList();
                 _contacts = new ObservableCollection<Contact>(contacts);
             }
 
@@ -79,7 +79,7 @@ namespace XamarinFormsApp.Pages
         private void Call_Clicked(object sender, EventArgs e)
         {
             var contact = (sender as MenuItem).CommandParameter as Contact;
-            DisplayAlert("Call", contact.Name, "OK");
+            DisplayAlert("Call", contact.FirstName, "OK");
         }
 
         private void Delete_Clicked(object sender, EventArgs e)

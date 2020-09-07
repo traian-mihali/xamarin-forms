@@ -2,6 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinFormsApp.Pages.ContactDetailPage"
-             Title="{Binding Name}">
-    <Label Text="{Binding Name}"/>
+             NavigationPage.BackButtonTitle="Back" >
+    <TableView Intent="Form">
+        <TableRoot>
+            <TableSection Title="Name">
+                <EntryCell Label="First Name" Text="{Binding FirstName}" />
+                <EntryCell Label="Last Name" Text="{Binding LastName}" />
+            </TableSection>
+            <TableSection Title="Contact">
+                <EntryCell Label="Phone" Text="{Binding Phone}" Keyboard="Numeric" />
+                <EntryCell Label="Email" Text="{Binding Email}" Keyboard="Email" />
+            </TableSection>
+            <TableSection Title="Other">
+                <SwitchCell Text="Blocked" On="{Binding IsBlocked}" />
+            </TableSection>
+            <TableSection>
+                <ViewCell>
+                    <Button Text="Save" HorizontalOptions="Center" Clicked="OnSave"/>
+                </ViewCell>
+            </TableSection>
+        </TableRoot>
+    </TableView>
 </ContentPage>
