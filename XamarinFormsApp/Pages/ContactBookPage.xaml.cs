@@ -58,7 +58,6 @@ namespace XamarinFormsApp.Pages
                 selectedContact.Email = contact.Email;
                 selectedContact.IsBlocked = contact.IsBlocked;
 
-                _contactService.AddContact(selectedContact);
             };
 
             await Navigation.PushAsync(page);
