@@ -11,7 +11,12 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using SQLite;
+using Xamarin.Forms;
+using XamarinFormsApp.Droid.Persistence;
 using XamarinFormsApp.Persistence;
+
+
+[assembly: Dependency(typeof(SQLiteDb))]
 
 namespace XamarinFormsApp.Droid.Persistence
 {
