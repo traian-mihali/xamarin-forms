@@ -7,6 +7,8 @@ namespace XamarinFormsApp
 {
     public partial class App : Application
     {
+        private const string NotificationsEnabledKey = "NotificationsEnabled";
+
         public App()
         {
             InitializeComponent();
@@ -14,9 +16,10 @@ namespace XamarinFormsApp
             //MainPage = new NavigationPage(new ContactsPage());
             //MainPage = new NavigationPage(new ToolbarPage());
             //MainPage = new NavigationPage(new InstagramPage());
-            //MainPage = new FormsPage()
-            //MainPage = new NavigationPage(new TableViewPage());
-            MainPage = new NavigationPage(new ContactBookPage());
+            //MainPage = new FormsPage();
+            MainPage = new NavigationPage(new TableViewPage());
+            //MainPage = new NavigationPage(new ContactBookPage());
+
 
         }
 
@@ -30,6 +33,20 @@ namespace XamarinFormsApp
 
         protected override void OnResume()
         {
+        }
+
+        public bool NotificationsEnabled { 
+            get
+            {
+                if (Properties.ContainsKey(NotificationsEnabledKey))
+                    return (bool)Properties[NotificationsEnabledKey];
+
+                return false;
+            }
+            set
+            {
+                Application.Current.Properties[NotificationsEnabledKey] = value;
+            }
         }
     }
 }

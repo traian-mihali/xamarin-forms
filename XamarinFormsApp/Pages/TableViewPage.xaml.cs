@@ -15,6 +15,8 @@ namespace XamarinFormsApp.Pages
         public TableViewPage()
         {
             InitializeComponent();
+
+            BindingContext = Application.Current;
         }
 
         private void OnContactMethodTapped(object sender, EventArgs e)

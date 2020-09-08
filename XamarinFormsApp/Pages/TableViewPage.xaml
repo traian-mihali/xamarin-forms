@@ -9,7 +9,7 @@
             <TableSection Title="Basics">
                 <TextCell Text="Name" Detail="Traian Mihali" />
                 <EntryCell Label="Title" Placeholder="(eg Shopping)"/>
-                <SwitchCell Text="Notifications" On="True" />
+                <SwitchCell Text="Notifications" On="{Binding NotificationsEnabled}" />
                 <local:DateCell Label="Starts" Date="1 Jan 2020" />
                 <local:DateCell Label="Ends" Date="1 Dec 2020" />
                 <ViewCell Tapped="OnContactMethodTapped" >
