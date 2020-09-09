@@ -1,21 +1,73 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace XamarinFormsApp.Models
 {
-    public class Contact
+    [Table("Contacts")]
+    public class Contact : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private string _firstName;
+
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string FullName {
+
+        [MaxLength(255)]
+        public string FirstName 
+        { 
+            get { return _firstName; }
+            set
+            {
+                if (_firstName == value)
+                    return;
+
+                _firstName = value;
+
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(FullName));
+            }
+        }
+
+        private string _lastName;
+
+        [MaxLength(255)]
+        public string LastName { 
+            get { return _lastName; } 
+            set
+            {
+                if (_lastName == value)
+                    return;
+
+                _lastName = value;
+
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(FullName));
+            }
+        }
+        public string FullName { 
             get { return String.Format("{0} {1}", FirstName, LastName); }
         }
+
+        [MaxLength(255)]
         public string Phone { get; set; }
+
+        [MaxLength(255)]
         public string Email { get; set; }
+
+
         public string Status { get; set; }
         public string ImageUrl { get; set; }
-        public bool  IsBlocked { get; set; }
+        public bool IsBlocked { get; set; }
+
+
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

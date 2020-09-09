@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamarinFormsApp.Models;
+using XamarinFormsApp.Persistence;
 using XamarinFormsApp.Services;
 
 namespace XamarinFormsApp.Pages
@@ -17,11 +19,14 @@ namespace XamarinFormsApp.Pages
         public event EventHandler<Contact> ContactAdded;
         public event EventHandler<Contact> ContactUpdated;
 
+        private SQLiteAsyncConnection _connection;
 
         public ContactDetailPage(Contact contact)
         {
             if (contact == null)
                 throw new ArgumentNullException();
+
+            InitializeComponent();
 
             BindingContext = new Contact
             {
@@ -33,7 +38,7 @@ namespace XamarinFormsApp.Pages
                 IsBlocked = contact.IsBlocked
             };
 
-            InitializeComponent();
+            _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
         }
 
         private async void OnSave(object sender, EventArgs e)
@@ -48,10 +53,14 @@ namespace XamarinFormsApp.Pages
 
             if (contact.Id == 0)
             {
+                await _connection.InsertAsync(contact);
+
                 ContactAdded?.Invoke(this, contact);
             }
             else
             {
+                await _connection.UpdateAsync(contact);
+
                 ContactUpdated?.Invoke(this, contact);
             }
 

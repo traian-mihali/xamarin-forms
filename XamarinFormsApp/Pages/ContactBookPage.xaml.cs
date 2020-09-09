@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamarinFormsApp.Models;
+using XamarinFormsApp.Persistence;
 using XamarinFormsApp.Services;
 
 namespace XamarinFormsApp.Pages
@@ -15,14 +17,40 @@ namespace XamarinFormsApp.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ContactBookPage : ContentPage
     {
-        private ContactService _contactService = new ContactService();
+        //private ContactService _contactService = new ContactService();
+        private SQLiteAsyncConnection _connection;
         private ObservableCollection<Contact> _contacts;
+        private bool _isDataLoaded;
 
         public ContactBookPage()
         {
             InitializeComponent();
 
-            _contacts = new ObservableCollection<Contact>(_contactService.GetContacts());
+            //_contacts = new ObservableCollection<Contact>(_contactService.GetContacts());
+            //contactBookList.ItemsSource = _contacts;
+
+            _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+        }
+
+        protected override async void OnAppearing()
+        {
+            if (_isDataLoaded)
+                return;
+
+            _isDataLoaded = true;
+
+            await LoadData();
+
+            base.OnAppearing();
+        }
+
+        private async Task LoadData()
+        {
+            await _connection.CreateTableAsync<Contact>();
+
+            var contacts = await _connection.Table<Contact>().ToListAsync();
+
+            _contacts = new ObservableCollection<Contact>(contacts);
             contactBookList.ItemsSource = _contacts;
         }
 
@@ -31,10 +59,9 @@ namespace XamarinFormsApp.Pages
             var page = new ContactDetailPage(new Contact());
             page.ContactAdded += (source, contact) =>
             {
-
                 _contacts.Add(contact);
 
-                _contactService.AddContact(contact);
+                //_contactService.AddContact(contact);
             };
 
             await Navigation.PushAsync(page);
@@ -42,7 +69,7 @@ namespace XamarinFormsApp.Pages
 
         private async void OnContactSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if (e.SelectedItem == null)
+            if (contactBookList.SelectedItem == null)
                 return;
 
             var selectedContact = e.SelectedItem as Contact;
@@ -74,7 +101,9 @@ namespace XamarinFormsApp.Pages
             {
                 _contacts.Remove(contact);
 
-                _contactService.RemoveContact(contact);
+                await _connection.DeleteAsync(contact);
+
+                //_contactService.RemoveContact(contact);
             }
         }
     }
