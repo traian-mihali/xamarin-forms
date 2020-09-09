@@ -19,8 +19,8 @@ namespace XamarinFormsApp
             //MainPage = new FormsPage();
             //MainPage = new NavigationPage(new TableViewPage());
             //MainPage = new NavigationPage(new ContactBookPage());
-            MainPage = new RecipesPage();
-
+            //MainPage = new RecipesPage();
+            MainPage = new PostsPage();
 
         }
 
