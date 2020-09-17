@@ -2,27 +2,45 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 using XamarinFormsApp.Models;
+using XamarinFormsApp.Pages;
 
 namespace XamarinFormsApp.ViewModels
 {
     public class PlaylistsViewModel : BaseViewModel
     {
+        private PlaylistViewModel _selectedPlaylist;
+        private readonly IPageService _pageService;
+
+
         public ObservableCollection<PlaylistViewModel> Playlists { get; private set; } = new ObservableCollection<PlaylistViewModel>();
 
-        private PlaylistViewModel _selectedPlaylist;
         public PlaylistViewModel SelectedPlaylist { 
             get { return _selectedPlaylist; }
             set { SetValue(ref _selectedPlaylist, value); }
-        }  
+        }
 
-        public void AddPlaylist()
+        public ICommand AddPlaylistCommand { get; private set; }
+        public ICommand SelectPlaylistCommand { get; private set; }
+
+
+        public PlaylistsViewModel(IPageService pageService)
+        {
+            _pageService = pageService;
+            AddPlaylistCommand = new Command(AddPlaylist);
+            SelectPlaylistCommand = new Command<PlaylistViewModel>(async vm => await SelectPlaylist(vm));
+        }
+
+        private void AddPlaylist()
         {
             var newPlaylist = "Playlist " + (Playlists.Count + 1);
             Playlists.Add(new PlaylistViewModel { Title = newPlaylist });
         }
 
-        public void SelectPlaylist(PlaylistViewModel playlist)
+        private async Task SelectPlaylist(PlaylistViewModel playlist)
         {
             if (playlist == null)
                 return;
@@ -31,7 +49,7 @@ namespace XamarinFormsApp.ViewModels
 
             SelectedPlaylist = null;
 
-            //await Navigation.PushAsync(new PlaylistDetailPage(playlist));
+            await _pageService.PushAsync(new PlaylistDetailPage(playlist));
         }
     }
 }

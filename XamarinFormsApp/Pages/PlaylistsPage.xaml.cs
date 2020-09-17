@@ -15,30 +15,32 @@ namespace XamarinFormsApp.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PlaylistsPage : ContentPage
     {
-        //private ObservableCollection<Playlist> _playlists = new ObservableCollection<Playlist>();
-
+        private PlaylistsViewModel ViewModel
+        {
+            get { return BindingContext as PlaylistsViewModel; }
+            set { BindingContext = value; }
+        }
         public PlaylistsPage()
         {
-            BindingContext = new PlaylistsViewModel();
+            ViewModel = new PlaylistsViewModel(new PageService());
 
             InitializeComponent();
         }
 
         protected override void OnAppearing()
         {
-
             base.OnAppearing();
         }
 
-        private void OnPlaylistAdd(object sender, EventArgs e)
-        {
-            (BindingContext as PlaylistsViewModel).AddPlaylist();
+        //private void OnPlaylistAdd(object sender, EventArgs e)
+        //{
+        //    (BindingContext as PlaylistsViewModel).AddPlaylist();
 
-        }
+        //}
 
         private void OnPlaylistSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            (BindingContext as PlaylistsViewModel).SelectPlaylist(e.SelectedItem as PlaylistViewModel);
+            ViewModel.SelectPlaylistCommand.Execute(e.SelectedItem);
         }
     }
 }

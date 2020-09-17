@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamarinFormsApp.Models;
+using XamarinFormsApp.ViewModels;
 
 namespace XamarinFormsApp.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PlaylistDetailPage : ContentPage
     {
-        private Playlist _playlist;
+        private PlaylistViewModel _playlist;
 
-        public PlaylistDetailPage(Playlist playlist)
+        public PlaylistDetailPage(PlaylistViewModel playlist)
         {
             _playlist = playlist;
 
