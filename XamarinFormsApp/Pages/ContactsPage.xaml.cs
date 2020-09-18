@@ -65,7 +65,7 @@ namespace XamarinFormsApp.Pages
             //    return;
 
             var contact = e.SelectedItem as Contact;
-            Detail = new NavigationPage(new ContactDetailPage(contact));
+            //Detail = new NavigationPage(new ContactDetailPage(contact));
 
             IsPresented = false;
 
