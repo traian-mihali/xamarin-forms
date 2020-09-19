@@ -17,11 +17,14 @@ namespace XamarinFormsApp.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ContactDetailPage : ContentPage
     {
-        public ContactDetailPage(ContactDetailViewModel viewModel)
+        public ContactDetailPage(ContactViewModel viewModel)
         {
             InitializeComponent();
 
-            BindingContext = viewModel;
+            var _contactStore = new SQLiteContactStore(DependencyService.Get<ISQLiteDb>());
+            var _pageService = new PageService();
+
+            BindingContext = new ContactDetailViewModel(viewModel ?? new ContactViewModel(), _contactStore, _pageService);
         }
     }
 }
