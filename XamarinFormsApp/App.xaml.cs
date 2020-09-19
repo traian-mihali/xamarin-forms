@@ -24,7 +24,7 @@ namespace XamarinFormsApp
             //MainPage = new NavigationPage(new MoviesPage());
             //MainPage = new NavigationPage(new PlaylistsPage());
 
-            MainPage = new LoginPage1();
+            MainPage = new KeypadPage();
 
         }
 
